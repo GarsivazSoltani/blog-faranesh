@@ -28,6 +28,8 @@ Route::prefix('article')->group(function () {
     Route::get('', [ArticleController::class, 'index']);
     Route::get('create', [ArticleController::class, 'create']);
     Route::post('', [ArticleController::class, 'store']);
+    Route::get('{id}/edit', [ArticleController::class, 'edit']);
+    Route::put('{id}', [ArticleController::class, 'update']);
 });
 
 

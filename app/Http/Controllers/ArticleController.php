@@ -37,9 +37,10 @@ class ArticleController extends Controller
         return back();
     }
 
-    public function edit()
+    public function edit($id)
     {
-
+        $article = DB::table('articles')->find($id);
+        return view('article.edit', compact('article'));
     }
 
     public function update()

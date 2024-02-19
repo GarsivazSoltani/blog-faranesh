@@ -8,7 +8,7 @@
         @foreach ($articles as $article)
             <tr>
                 <td>{{$article->id}}</td>
-                <td>{{$article->title}}</td>
+                <td><a href="article/{{$article->id}}/edit">{{$article->title}}</a></td>
                 <td>{{$article->source}}</td>
             </tr>
         @endforeach
