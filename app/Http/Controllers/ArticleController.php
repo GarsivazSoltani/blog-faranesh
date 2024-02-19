@@ -43,9 +43,18 @@ class ArticleController extends Controller
         return view('article.edit', compact('article'));
     }
 
-    public function update()
+    public function update(Request $request, $id)
     {
+        $title = $request->title;
+        $body = $request->body;
+        $source = $request->source;
+        DB::table('articles')->where('id', $id)->update([
+            'title' => $title,
+            'body' => $body,
+            'source' => $source
+        ]);
 
+        return redirect('/article');
     }
 
     public function destroy()

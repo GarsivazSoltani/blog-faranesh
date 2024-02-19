@@ -5,7 +5,8 @@
 @section('content')
     <h1>Edit</h1>
     <form action="../{{$article->id}}" method="POST">
-        {{method_field('put')}}
+        {{-- {{method_field('put')}} --}}
+        @method('put')
         @csrf
         title: <input type="text" name="title" value="{{$article->title}}"><br><br>
         body: <textarea name="body" id="" cols="30" rows="10">{{$article->body}}</textarea><br><br>
