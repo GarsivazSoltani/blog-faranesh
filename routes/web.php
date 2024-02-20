@@ -31,6 +31,7 @@ Route::prefix('article')->group(function () {
     Route::get('{id}/edit', [ArticleController::class, 'edit']);
     Route::get('{id}', [ArticleController::class, 'show']);
     Route::put('{id}', [ArticleController::class, 'update']);
+    Route::delete('{id}', [ArticleController::class, 'destroy']);
 });
 
 

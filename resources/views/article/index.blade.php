@@ -11,6 +11,7 @@
               <th scope="col">عنوان</th>
               <th scope="col">منبع</th>
               <th scope="col">ویرایش</th>
+              <th scope="col">حذف</th>
             </tr>
         </thead>
         <tbody>
@@ -22,6 +23,13 @@
                     <td><button>
                         <a href="article/{{$article->id}}/edit">Edit</a>    
                     </button></td>
+                    <td>
+                        <form action="/article/{{$article->id}}" method="post">
+                            @method('delete')
+                            @csrf
+                            <input type="submit" value="Delete">
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

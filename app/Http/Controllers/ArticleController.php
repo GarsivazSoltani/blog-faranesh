@@ -58,8 +58,9 @@ class ArticleController extends Controller
         return redirect('/article');
     }
 
-    public function destroy()
+    public function destroy($id)
     {
-
+        $article = db::table('articles')->where('id', $id)->delete();
+        return back();
     }
 }
