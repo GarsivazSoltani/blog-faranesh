@@ -4,6 +4,9 @@
 
 @section('content')
     <h1>Index</h1>
+    <button>
+        <a href="article/create">Add</a>  
+    </button><br>
     <table border="1" cellpadding="10">
         <thead>
             <tr>

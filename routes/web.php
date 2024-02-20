@@ -17,12 +17,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [PageContRoller::class, 'index']);
-Route::get('about', [PageContRoller::class, 'about']);
-Route::get('welcome', [PageContRoller::class, 'welcome']);
+// Route::get('/', [PageContRoller::class, 'index']);
+// Route::get('about', [PageContRoller::class, 'about']);
+// Route::get('welcome', [PageContRoller::class, 'welcome']);
 
-Route::get('users/{id}', [UserController::class, 'showUser']);
-Route::post('newsletter', [NewsletterController::class, 'store']);
+// Route::get('users/{id}', [UserController::class, 'showUser']);
+// Route::post('newsletter', [NewsletterController::class, 'store']);
 
 Route::prefix('article')->group(function () {
     Route::get('', [ArticleController::class, 'index']);
