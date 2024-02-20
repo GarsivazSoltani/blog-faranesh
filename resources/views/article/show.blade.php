@@ -10,6 +10,13 @@
     <p>source: {{$article->source}}</p>
     <h3><a href="/article">بازگشت</a></h3>
     <hr>
+    categories: <br>
+    <ul>
+        @foreach ($article->categories as $category)
+            <li>{{$category->title}}</li>
+        @endforeach
+    </ul>
+    <hr>
     <h1>Enter Your Comment:</h1><br>
     <form action="{{$article->id}}/comment" method="POST">
         @csrf
