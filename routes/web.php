@@ -30,6 +30,7 @@ Route::prefix('article')->group(function () {
     Route::post('', [ArticleController::class, 'store']);
     Route::get('{id}/edit', [ArticleController::class, 'edit']);
     Route::get('{id}', [ArticleController::class, 'show']);
+    Route::post('{id}/comment', [ArticleController::class, 'storeComment']);
     Route::put('{id}', [ArticleController::class, 'update']);
     Route::delete('{id}', [ArticleController::class, 'destroy']);
 });

@@ -80,4 +80,16 @@ class ArticleController extends Controller
         $article = Article::find($id)->delete();
         return back();
     }
+
+    public function storeComment(Request $request, $articleId)
+    {
+        $article = Article::find($articleId);
+        $article->comments()->create([
+            'author' => $request->author,
+            'body' => $request->body
+        ]);
+        $article->save();
+
+        return back();
+    }
 }

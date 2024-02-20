@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('articles', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('title')->nullable();
+        Schema::create('comments', function (Blueprint $table) {
+            $table->id();
+            $table->string('author');
             $table->text('body');
-            $table->boolean('is_active')->default(0);
-            $table->enum('status', ['draft', 'completed', 'published'])->default('draft');
-            $table->string('source');
+            $table->integer('article_id')->unsigned();
             $table->timestamps();
+            $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');
         });
     }
 
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('articles');
+        Schema::dropIfExists('comments');
     }
 };
