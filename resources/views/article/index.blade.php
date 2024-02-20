@@ -37,4 +37,10 @@
             @endforeach
         </tbody>
     </table>
+    {{$articles->links()}}
+
+    <style>
+        .pagination{list-style-type: none; font-size: 16px;}
+        .pagination li{float: left; margin: 5px;}
+    </style>
 @endsection
