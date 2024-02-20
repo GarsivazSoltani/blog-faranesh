@@ -13,4 +13,5 @@
         source: <input type="text" name="source" value="{{$article->source}}"><br><br>
         <input type="submit">
     </form>
+    <h3><a href="/article">بازگشت</a></h3>
 @endsection
